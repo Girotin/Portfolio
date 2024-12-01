@@ -10,6 +10,7 @@
 __________________________________________________________________________________________
 
 Fork do código original do desenvolvedor bedimcode.
+
 Foram feitas consideráveis adaptações com relação ao código original:
 
 - Adicionado um modo escuro;
