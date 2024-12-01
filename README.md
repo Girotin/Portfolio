@@ -16,7 +16,7 @@ ________________________________________________________________________________
 - Tradução dos elementos e código para Português BR
 - Substituição dos elementos template por reais elementos do meu portifólio.
 
-No momento hosteado (aqui)[https://giroto.netlify.app]
+No momento hosteado [aqui](https://giroto.netlify.app)
 
 ![preview img](/preview.png)
 
