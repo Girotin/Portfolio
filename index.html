@@ -3,29 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="icon" href="assets/img/icon.gif">
         <link rel="stylesheet" href="assets/css/styles.css">
-
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
-        <title>Portfolio website complete</title>
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- Ícones -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+        <video class="video" src="assets/img/bgvideo.webm" muted loop autoplay></video> 
+        <title>Oi! Eu sou o Giroto ;)</title>
     </head>
+
     <body>
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Marlon</a>
-                </div>
+                <!-- ===== LOGO ===== -->
+                <svg id="logo" class="nav__logo" viewbox="0 0 100 22">
+                    <defs>
+                        <linearGradient id="gradient">
+                            <stop color="#000" />
+                        </linearGradient>
+                        <pattern id="wave" x="0" y="1" width="100%" height="100%" patternUnits="userSpaceOnUse">
+                            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+                                <animateTransform
+                                    attributeName="transform"
+                                    begin="0s"
+                                    dur="1.5s"
+                                    type="translate"
+                                    from="0,0"
+                                    to="40,0"
+                                    repeatCount="indefinite" />
+                            </path>
+                        </pattern>
+                    </defs>
+                    <text text-anchor="middle" x="13" y="15" font-size="10" fill="white" fill-opacity="0.1">Giroto</text>
+                    <text text-anchor="middle" x="13" y="15" font-size="10" fill="url(#wave)" fill-opacity="1">Giroto</text>
+                </svg>
+                
+                <button id="theme-toggle" style="background-color: transparent; border: none;"><i class='bx bx-sun botao_darkmode'></i></button>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#inicio" class="nav__link active-link">Início</a></li>
+                        <li class="nav__item"><a href="#sobre" class="nav__link">Sobre</a></li>
+                        <li class="nav__item"><a href="#habilidades" class="nav__link">Habilidades</a></li>
+                        <li class="nav__item"><a href="#trabalhos" class="nav__link">Trabalhos</a></li>
+                        <li class="nav__item"><a href="#contato" class="nav__link">Contato</a></li>
                     </ul>
                 </div>
 
@@ -37,17 +60,16 @@
 
         <main class="l-main">
             <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
+            <section class="home bd-grid" id="inicio">
                 <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Marlon</span><br> Web Designer</h1>
+                    <h1 class="home__title">Oi!<br>Eu sou o <span class="home__title-color">Giroto</span> ;)<br> Desenvolvedor<span class="blinking">_</span><br>Fullstack</h1>
 
-                    <a href="#" class="button">Contact</a>
+                    <a href="#contato" class="button">Contato</a>
                 </div>
 
                 <div class="home__social">
-                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="https://www.linkedin.com/in/giroto-desenvolvedor/" class="home__social-icon"><i class='bx bxl-linkedin'></i><span> Linkedin<span></span></a>
+                    <a href="https://github.com/Girotin" class="home__social-icon"><i class='bx bxl-github'></i><span> Github</span></a>
                 </div>
 
                 <div class="home__img">
@@ -64,8 +86,8 @@
             </section>
 
             <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+            <section class="about section " id="sobre">
+                <h2 class="section-title">Sobre mim</h2>
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
@@ -73,20 +95,39 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">I'am Marlon</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
-                    </div>                                   
+                        <h2 class="about__subtitle">Eaí? Tudo bem?</h2>
+                        <p class="about__text">Meu nome completo é Gabriel Augusto Giroto, tenho 21 anos e sou um desenvolvedor em aprendizado, sou estudante de Engenharia de Software da Unifil em Londrina, previamente tendo estudado 3 anos de Engenharia de Computação na UTFPR.</p>           
+                    </div>    
+                    
+                    <div>
+                        <h2 class="about__subtitle">Fiz parte da Overload!</h2>
+                        <p class="about__text">Durante meus 3 anos na UTFPR, um deles foi inteiro no projeto de extensão da Overload, focado em robótica e arduíno. Fiz parte da equipe de Artbot e também do Marketing, nunca vou esquecer minha passagem por lá!</p>           
+                    </div>  
+
+                    <div class="about__img2">
+                        <img src="assets/img/about2.jpg" alt="">
+                    </div> 
+
+                    <div class="about__img3">
+                        <img src="assets/img/about3.jpg" alt="">
+                    </div>
+
+                    <div>
+                        <h2 class="about__subtitle">Desenvolvimento</h2>
+                        <p class="about__text">Participei de dois hackatons, estudei conteúdos diversos da área de programação, relações humanas, e noções básicas de design. Desde a pandemia em 2021 busco o estudo e o avanço em minha carreira.</p>           
+                    </div>  
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+            <section class="skills section" id="habilidades">
+                <h2 class="section-title">Habilidades</h2>
 
                 <div class="skills__container bd-grid">          
                     <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <h2 class="skills__subtitle">Habilidades Profissionais</h2>
+                        <p class="skills__text">Ao longo de meu aprendizado desenvolvi e continuo estudando as seguintes habilidades:</p>
+                        <!-- ===== HTML =====-->
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-html5 skills__icon'></i>
@@ -96,9 +137,10 @@
 
                             </div>
                             <div>
-                                <span class="skills__percentage">95%</span>
+                                <span class="skills__percentage">50%</span>
                             </div>
                         </div>
+                        <!-- ===== CSS =====-->
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-css3 skills__icon'></i>
@@ -108,31 +150,98 @@
                                 
                             </div>
                             <div>
-                                <span class="skills__percentage">85%</span>
+                                <span class="skills__percentage">20%</span>
                             </div>
                         </div>
+                        <!-- ===== JAVASCRIPT =====-->
                         <div class="skills__data">
                             <div class="skills__names">
                                 <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
+                                <span class="skills__name">JavaScript</span>
                             </div>
                             <div class="skills__bar skills__js">
                                 
                             </div>
                             <div>
-                                <span class="skills__percentage">65%</span>
+                                <span class="skills__percentage">20%</span>
                             </div>
                         </div>
+                        <!-- ===== Design =====-->
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
+                                <i class='bx bx-palette skills__icon'></i>
+                                <span class="skills__name">Design</span>
+                            </div>
+                            <div class="skills__bar skills__design">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">35%</span>
+                            </div>
+                        </div>
+                        <!-- ===== UI/UX =====-->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bx-devices skills__icon'></i>
+                                <span class="skills__name">UI/UX</span>
                             </div>
                             <div class="skills__bar skills__ux">
                                 
                             </div>
                             <div>
-                                <span class="skills__percentage">85%</span>
+                                <span class="skills__percentage">25%</span>
+                            </div>
+                        </div>
+                        <!-- ==== C/C++ =====-->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-c-plus-plus skills__icon'></i>
+                                <span class="skills__name">C/C++</span>
+                            </div>
+                            <div class="skills__bar skills__c">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">25%</span>
+                            </div>
+                        </div>
+                        <!-- ==== JAVA =====-->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-java skills__icon'></i>
+                                <span class="skills__name">Java</span>
+                            </div>
+                            <div class="skills__bar skills__java">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">20%</span>
+                            </div>
+                        </div>
+                        <!-- ==== Python =====-->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-python skills__icon'></i>
+                                <span class="skills__name">Python</span>
+                            </div>
+                            <div class="skills__bar skills__py">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">15%</span>
+                            </div>
+                        </div>
+                        <!-- ==== SQL =====-->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-postgresql skills__icon'></i>
+                                <span class="skills__name">SQL</span>
+                            </div>
+                            <div class="skills__bar skills__sql">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">20%</span>
                             </div>
                         </div>
                     </div>
@@ -143,56 +252,52 @@
                 </div>
             </section>
 
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
-
+            <!--===== TRABALHOS =====-->
+            <section class="work section" id="trabalhos">
+                <h2 class="section-title">Trabalhos</h2>
+                <div class="textoContato"><span>Abaixo há dois projetos pequenos que fiz durante a faculdade:<br><br></span></div>
                 <div class="work__container bd-grid">
-                    <a href="" class="work__img">
+                    <a href="https://silksong.netlify.app" class="work__img">
                         <img src="assets/img/work1.jpg" alt="">
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://fiscalizai.netlify.app/" class="work__img">
                         <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work6.jpg" alt="">
                     </a>
                 </div>
             </section>
 
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
+            <!--===== CONTATO =====-->
+            <section class="contact section" id="contato">
+                <h2 class="section-title">Contato</h2>
+                <div class="textoContato"><span>Quer entrar em contato comigo? Envie uma mensagem!<br><br></span></div>
+            
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
+                    <form action="https://formsubmit.co/giroto.testes@gmail.com" method="POST" class="contact__form">
+                        <!-- Nome -->
+                        <input type="text" name="name" placeholder="Digite seu nome" class="contact__input" required>
+                        
+                        <!-- Email -->
+                        <input type="email" name="email" placeholder="Digite seu Email" class="contact__input" required>
+                        
+                        <!-- Mensagem -->
+                        <textarea name="message" placeholder="Digite sua mensagem" cols="0" rows="10" class="contact__input" required></textarea>
+                        
+                        <!-- Botão de Enviar -->
+                        <input type="submit" value="Enviar" class="contact__button button">
+                        
+                        <!-- Configurações Adicionais -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://giroto.netlify.app/obrigado.html">
                     </form>
                 </div>
             </section>
-        </main>
-
+            
         <!--===== FOOTER =====-->
         <footer class="footer">
-            <p class="footer__title">Marlon</p>
             <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://www.instagram.com/giroto.exe/" class="footer__icon"><i class='bx bxl-instagram' ></i> Instagram</a>
             </div>
-            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
+            <p class="footer__copy">&#169; Girotin. Todos os direitos reservados</p>
         </footer>
 
 

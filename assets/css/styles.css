@@ -7,9 +7,13 @@
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
-  --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
-  --second-color: hsl(var(--hue-color), 56%, 12%);
+  --hue-color: 260;
+  --first-color: hsl(var(--hue-color), 100%, 40%);
+  --second-color: hsl(var(--hue-color), 100%, 10%);
+  --third-color: #000000;
+  --background-color: #ffffff;
+  --text-color: #000000;
+
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -25,6 +29,17 @@
   --z-back: -10;
   --z-fixed: 100;
 }
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.botao_darkmode{
+  font-size: 2rem;
+  color: var(--third-color);
+}
+
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3.5rem;
@@ -127,10 +142,10 @@ img {
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    width: 80%;
+    width: 40%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color:#ffffff;
     transition: 0.5s;
   }
 }
@@ -139,21 +154,27 @@ img {
 }
 .nav__link {
   position: relative;
-  color: #fff;
+  color: var(--first-color);
 }
-.nav__link:hover {
-  position: relative;
-}
-.nav__link:hover::after {
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: var(--first-color);
   position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
   left: 0;
   top: 2rem;
-  background-color: var(--first-color);
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
 }
 .nav__logo {
+  font-family: "Girassol", serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: bold;
   color: var(--second-color);
 }
 .nav__toggle {
@@ -199,7 +220,7 @@ img {
   flex-direction: column;
 }
 .home__social-icon {
-  width: max-content;
+  width:fit-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
@@ -231,7 +252,7 @@ img {
   transition: 0.3s;
 }
 .button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.50);
 }
 
 /* ===== ABOUT =====*/
@@ -245,9 +266,24 @@ img {
 .about__img {
   justify-self: center;
 }
+
+.about__img2 {
+  justify-self: center;
+}
+
 .about__img img {
   width: 200px;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+}
+
+.about__img2 img {
+  width: 480px;
+  border-radius: 1rem;
+}
+
+.about__img3 img {
+  width: 440px;
+  border-radius: 1rem;
 }
 
 /* ===== SKILLS =====*/
@@ -291,17 +327,36 @@ img {
   z-index: var(--z-back);
 }
 .skills__html {
-  width: 95%;
+  width: 50%;
 }
 .skills__css {
-  width: 85%;
+  width: 20%;
 }
 .skills__js {
-  width: 65%;
+  width: 20%;
 }
 .skills__ux {
-  width: 85%;
+  width: 25%;
 }
+.skills__c {
+    width: 25%;
+}
+.skills__java {
+    width: 20%;
+}
+
+.skills__py {
+  width: 15%;
+}
+
+.skills__sql {
+  width: 20%;
+}
+
+.skills__design {
+    width: 35%;
+}
+
 .skills__img {
   border-radius: 0.5rem;
 }
@@ -312,7 +367,7 @@ img {
 }
 .work__img {
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 .work__img img {
@@ -461,6 +516,13 @@ img {
   .about__img img {
     width: 300px;
   }
+  .about__img2 img {
+    width: 480px;
+  }
+
+  .about__img3 img {
+    width: 512px;
+  }
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
@@ -468,10 +530,11 @@ img {
     text-align: initial;
   }
   .work__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
   }
 }
+
 @media screen and (min-width: 992px) {
   .bd-grid {
     margin-left: auto;
@@ -483,4 +546,260 @@ img {
   .home__img {
     width: 450px;
   }
+
+  .item_overloadTXT{
+    grid-row: 4;
+  }
+
+  .item_overloadIMG{
+    grid-row: 3;
+  }
 }
+
+.textoContato
+{
+  text-align: center;
+}
+
+.about__container {
+  display: flex; /* Ativa o Flexbox */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  gap: 20px; /* Espaçamento entre os itens */
+  max-width: 1080px; /* Largura máxima do container */
+}
+
+.about__container > div,
+.about__container > .about__img,
+.about__container > .about__img2,
+.about__container > .about__img3 {
+  flex: 1 1 calc(50% - 10px); /* Cada item ocupa 50% no desktop */
+}
+
+.about__img img,
+.about__img2 img,
+.about__img3 img {
+  display: block; /* Remove o comportamento inline padrão das imagens */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.about__img,
+.about__img2,
+.about__img3 {
+  text-align: center; /* Garante centralização do conteúdo nas divs */
+  width: 100%; /* Garante que as divs ocupem toda a largura no mobile */
+}
+
+@media (max-width: 768px) { /* Ajuste para mobile */
+
+  .skills__img{
+    display: none;
+  }
+
+  .about__container {
+    flex-direction: column; /* Alinha os itens verticalmente */
+  }
+
+  .about__img {
+    order: 0; /* Define a nova ordem para o elemento */
+  }
+
+  .about__subtitle {
+    order: 1; /* Mantém os textos depois da imagem */
+  }
+
+  .about__img2 {
+    order: 2;
+  }
+
+  .about__img3 {
+    order: 4;
+  }
+
+  /* Ajustando os textos */
+  .about__container > div:nth-child(3) {
+    order: 3;
+  }
+
+  .about__container > div:nth-child(6) {
+    order: 5;
+  }
+
+  .home__social-icon {
+    width: max-content;
+    margin-bottom: var(--mb-2);
+    font-size: 0.9rem;
+    color: var(--second-color);
+  }
+
+  .botao_darkmode{
+    font-size: 1.5rem;
+    margin-left: -64px;
+  }
+
+}
+
+@media (max-width: 361px) { /* Ajuste fino para mobile (Samsumg Galaxy S8)*/
+  .home__social-icon {
+    width: max-content;
+    margin-bottom: var(--mb-2);
+    font-size: 0.7rem;
+    color: var(--second-color);
+  }
+
+  .botao_darkmode{
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: auto;
+  }
+
+}
+
+/**------------------------------------------------------------------------
+ * *                                INFO
+ *                         Trecho do "obrigado.html"
+ *------------------------------------------------------------------------**/
+
+/* Geral */
+.bodyObrigado {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Estilos para a página de agradecimento */
+.thank-you {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.thank-you__content {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.thank-you__title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #703cf4;
+    margin-bottom: 15px;
+}
+
+.thank-you__message {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.thank-you__button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.thank-you__button:hover {
+    background-color: #0056b3;
+}
+
+/**------------------------------------------------------------------------
+ * *                                INFO
+ *                              Modo Escuro
+ *------------------------------------------------------------------------**/
+
+body.dark-mode {
+  --first-color: hsl(var(--hue-color), 100%, 60%);
+  --second-color: hsl(var(--hue-color), 75%, 100%);
+  --background-color: #2b2b2b;
+  --text-color: #ffffff;
+
+  .l-header{
+    background-color: #000000;
+    box-shadow: none;
+  }
+
+  .video{
+    opacity: 8%;
+    filter: hue-rotate(50deg) grayscale(100%) contrast(150%) brightness(4);
+  }
+
+  .skills__data{
+  box-shadow: 0px 4px 25px rgba(128, 128, 128, 0.2);
+  }
+
+  .anim_logo{
+    fill:#000000;
+  }
+
+  .botao_darkmode{
+    font-size: 2rem;
+    color: #ffffff;
+  }
+
+  .footer{
+    background-color: #000000;
+  }
+
+  /* Trecho Mobile*/
+  
+  @media (max-width: 768px) { 
+    .botao_darkmode{
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .nav__menu {
+      background-color:#000000;
+    }
+  }
+}
+
+/**------------------------------------------------------------------------
+ * *                                INFO
+ *                           Trecho de animações
+ *------------------------------------------------------------------------**/
+
+ .video
+{
+    position: fixed;
+    transform: scaleY(-1);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 8%;
+    filter: hue-rotate(240deg) grayscale(100%) contrast(150%) brightness(50);
+}
+
+.blinking {
+  font-weight: bold; /* Deixe o underline destacado */
+  animation: blink 1s steps(1, start) infinite; /* Animação contínua */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; /* Aparece */
+  }
+  50% {
+    opacity: 0; /* Some */
+  }
+  100% {
+    opacity: 1; /* Volta a aparecer */
+  }
+}
+ 
