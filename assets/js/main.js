@@ -1,4 +1,14 @@
-/*===== MENU SHOW =====*/ 
+// O código abaixo é referente ao index.html e ao styles.css do Portfolio
+// Cada trecho foi separado em seções/módulos para melhor organização.
+// Criador original: Bedimmcode
+// Alterações e comentários em português: Girotin
+
+/**------------------------------------------------------------------------
+ * ?                 Botão de Exibir o Menu (Mobile)
+ * 
+ * Sistema simples que exibe e remove o menu de IDs do modo mobile
+*------------------------------------------------------------------------**/
+
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
@@ -11,7 +21,13 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-/*==================== REMOVE MENU MOBILE ====================*/
+/**------------------------------------------------------------------------
+ * ?                  Removedor automático do Menu (Mobile)
+ * 
+ * Sistema que recolhe o menu de IDs no modo mobile ao selecionar algum deles
+ * (Início, Sobre, etc)
+ *------------------------------------------------------------------------**/
+
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -21,7 +37,13 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/**------------------------------------------------------------------------
+ * ?           Sistema de animação das IDs no topo (Desktop)
+ * 
+ * Necessário para a exibição correta da animação do tópico selecionado no 
+ * momento (Início, Sobre, etc)
+ *------------------------------------------------------------------------**/
+
 const sections = document.querySelectorAll('section[id]')
 
 const scrollActive = () =>{
@@ -42,13 +64,18 @@ const scrollActive = () =>{
 }
 window.addEventListener('scroll', scrollActive)
 
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
+/**------------------------------------------------------------------------
+ * ?          Animação de revelar os elementos ao scrollar a tela
+ * 
+ * Sistema de exibição em fade-in dos elementos da página
+ *------------------------------------------------------------------------**/
+
+const sr = ScrollReveal({   // Aqui você pode manipular animação, duração, delay, escala da animç, e outros 
     origin: 'top',
     distance: '60px',
-    duration: 2000,
+    duration: 1250,
     delay: 200,
-//     reset: true
+    reset: true
 });
 
 sr.reveal('.home__data, .about__img, .about__img2, .about__img3, .textoContato, .skills__subtitle, .skills__text',{}); 
@@ -56,32 +83,50 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
-/* Modo Escuro */
+/**------------------------------------------------------------------------
+ * ?                       Sistema de Modo Dark/Light
+ * ! (Tem erro em algum lugar por aqui)
+ * Botão e sistema do modo Escuro
+ *------------------------------------------------------------------------**/
+
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
 const toggleDarkMode = () => {
-    // Toggle o tema
-    document.body.classList.toggle("dark-mode");
+
+    document.body.classList.toggle("dark-mode");            // Liga/Desliga o modo escuro
     
-    // Salvar no localStorage a preferência do tema
-    if (document.body.classList.contains("dark-mode")) {
+    if (document.body.classList.contains("dark-mode")) {    // Salva no localStorage a preferência do tema //! (Não está funcionando)
       localStorage.setItem("theme", "dark");
     } else {
       localStorage.setItem("theme", "light");
     }
   };
 
-  // Carregar a preferência de tema quando a página carregar
+/**------------------------------------------------------------------------
+ * ?  Carregar a preferência de tema Claro/Escuro quando a página carregar
+ * !  NÃO ESTÁ FUNCIONANDO!!!!
+ * 
+ * Precisa de revisão, deveria guardar localmente a preferência do usuário
+ *------------------------------------------------------------------------**/
+
 window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme");   // Armazena o tema do usuário
     
     if (savedTheme) {
-      document.body.classList.add(savedTheme); // Adiciona o tema salvo (dark ou light)
+      document.body.classList.add(savedTheme);          // Aciona o tema salvo (dark ou light)
     }
   });
+
+/**------------------------------------------------------------------------
+ * ?     Sistema de alteração da logo SVG fixa nos modos Dark/Light
+ * 
+ * Usa inserção de HTML dinâmica pelo bem da sanidade mental do dev
+ * e manutenção do index.html 
+ * (Aparententmente a animação SVG usada não é compativel com sistemas APPLE)
+ *------------------------------------------------------------------------**/
 
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("theme-toggle");

@@ -1,55 +1,55 @@
-/*===== GOOGLE FONTS =====*/
+/**========================================================================
+ * *                              Arquivo CSS base
+ *                   Cuidado ao manipular as classes por favor
+ *========================================================================**/
+
+/**------------------------------------------------------------------------
+ * *                  Importações e Declarações de variáveis
+ * !                 Alteram TODO o HTML de uma vez, cuidado!
+ *------------------------------------------------------------------------**/
+
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-/*===== VARIABLES CSS =====*/
+
+/* Variáveis CSS */
 :root {
   --header-height: 3rem;
   --font-semi: 600;
-  /*===== Colores =====*/
-  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-  /* HSL color mode */
-  --hue-color: 260;
-  --first-color: hsl(var(--hue-color), 100%, 40%);
-  --second-color: hsl(var(--hue-color), 100%, 10%);
+  --hue-color: 260;                                     /* Cores */
+  --first-color: hsl(var(--hue-color), 100%, 40%);      /* Roxo 260 - Vermelho 355 - Azul 224 - Rosa 340*/
+  --second-color: hsl(var(--hue-color), 100%, 10%);     /* Modo de cor HSL (Hue, Saturation, Lightness) */
   --third-color: #000000;
   --background-color: #ffffff;
   --text-color: #000000;
 
-  /*===== Fuente y tipografia =====*/
+  /* Fonte e tipografia */
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
-  /*===== Margenes =====*/
+
+  /* Margens */
   --mb-2: 1rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
   --mb-6: 3rem;
-  /*===== z index =====*/
+
+  /* Z index */
   --z-back: -10;
   --z-fixed: 100;
 }
+
+/**------------------------------------------------------------------------
+ * *                     Trecho de Configurações Base
+ * !                 Alteram TODO o HTML de uma vez, cuidado!
+ *------------------------------------------------------------------------**/
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-.botao_darkmode{
-  font-size: 2rem;
-  color: var(--third-color);
-}
-
-@media screen and (min-width: 968px) {
-  :root {
-    --big-font-size: 3.5rem;
-    --h2-font-size: 2rem;
-    --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
-  }
-}
-
-/*===== BASE =====*/
 *, ::before, ::after {
   box-sizing: border-box;
 }
@@ -85,7 +85,11 @@ img {
   display: block;
 }
 
-/*===== CLASS CSS ===== */
+/**------------------------------------------------------------------------
+ * *             Trecho das Classes Section, extensão as bases
+ * !                Alteram TODO o HTML de uma vez, cuidado!
+ *------------------------------------------------------------------------**/
+
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
@@ -111,7 +115,11 @@ img {
   padding-bottom: 2rem;
 }
 
-/*===== LAYOUT =====*/
+/**------------------------------------------------------------------------
+ * *                           Trecho de Layout
+ * !                Alteram TODO o HTML de uma vez, cuidado!
+ *------------------------------------------------------------------------**/
+
 .bd-grid {
   max-width: 1024px;
   display: grid;
@@ -129,7 +137,11 @@ img {
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
-/*===== NAV =====*/
+/**------------------------------------------------------------------------
+ * *            Trecho das Classes Nav (Menus de navegação Fixos)
+ *   
+ *------------------------------------------------------------------------**/
+ 
 .nav {
   height: var(--header-height);
   display: flex;
@@ -137,18 +149,7 @@ img {
   align-items: center;
   font-weight: var(--font-semi);
 }
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    top: var(--header-height);
-    right: -100%;
-    width: 40%;
-    height: 100%;
-    padding: 2rem;
-    background-color:#ffffff;
-    transition: 0.5s;
-  }
-}
+
 .nav__item {
   margin-bottom: var(--mb-4);
 }
@@ -183,7 +184,7 @@ nav ul li a:hover::after{
   cursor: pointer;
 }
 
-/*Active menu*/
+/* Classe que mantém ativa uma barra colorida na seção selecionada no menu de navegação */
 .active-link::after {
   position: absolute;
   content: "";
@@ -194,12 +195,16 @@ nav ul li a:hover::after{
   background-color: var(--first-color);
 }
 
-/*=== Show menu ===*/
+/* Classe  que exibe o menu de navegação do modo Mobile */
 .show {
   right: 0;
 }
 
-/*===== HOME =====*/
+/**------------------------------------------------------------------------
+ * *                Trecho das Classes Home (Seção Início)
+ *   
+ *------------------------------------------------------------------------**/
+
 .home {
   position: relative;
   row-gap: 5rem;
@@ -241,21 +246,41 @@ nav ul li a:hover::after{
   width: 360px;
 }
 
-/*BUTTONS*/
+/**------------------------------------------------------------------------
+ * *                   Trecho de estilização de Botões
+ *   
+ *------------------------------------------------------------------------**/
+
 .button {
   display: inline-block;
   background-color: var(--first-color);
   color: #fff;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2.75rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
   transition: 0.3s;
 }
+
+.botao_darkmode{
+  font-size: 2rem;
+  color: var(--third-color);
+}
+
+#botao_curriculo
+{
+  background-color:#434343;
+  padding: 0.75rem 1.25rem;
+}
+
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.50);
 }
 
-/* ===== ABOUT =====*/
+/**------------------------------------------------------------------------
+ * *               Trecho das Classes About (Seção Sobre)
+ *   
+ *------------------------------------------------------------------------**/
+
 .about__container {
   row-gap: 2rem;
   text-align: center;
@@ -286,17 +311,56 @@ nav ul li a:hover::after{
   border-radius: 1rem;
 }
 
-/* ===== SKILLS =====*/
+.about__container {
+  display: flex;     /* Ativa o Flexbox */
+  flex-wrap: wrap;   /* Permite quebra de linha */
+  gap: 20px;         /* Espaçamento entre os itens */
+  max-width: 1080px; /* Largura máxima do container */
+}
+
+.about__container > div,
+.about__container > .about__img,
+.about__container > .about__img2,
+
+.about__container > .about__img3 
+{
+  flex: 1 1 calc(50% - 10px); /* Cada item ocupa 50% no desktop */
+}
+
+.about__img img,
+.about__img2 img,
+.about__img3 img {
+  display: block;     /* Remove o comportamento inline padrão das imagens */
+  margin: 0 auto;     /* Centraliza horizontalmente */
+}
+
+.about__img,
+.about__img2,
+
+.about__img3 
+{
+  text-align: center; /* Garante centralização do conteúdo nas divs */
+  width: 100%;        /* Garante que as divs ocupem toda a largura no mobile */
+}
+
+/**------------------------------------------------------------------------
+ * *              Trecho das Classes Skills (Seção Habilidades)
+ *   
+ *------------------------------------------------------------------------**/
+
 .skills__container {
   row-gap: 2rem;
   text-align: center;
 }
+
 .skills__subtitle {
   margin-bottom: var(--mb-2);
 }
+
 .skills__text {
   margin-bottom: var(--mb-4);
 }
+
 .skills__data {
   display: flex;
   justify-content: space-between;
@@ -308,15 +372,18 @@ nav ul li a:hover::after{
   border-radius: 0.5rem;
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
 }
+
 .skills__icon {
   font-size: 2rem;
   margin-right: var(--mb-2);
   color: var(--first-color);
 }
+
 .skills__names {
   display: flex;
   align-items: center;
 }
+
 .skills__bar {
   position: absolute;
   left: 0;
@@ -326,42 +393,50 @@ nav ul li a:hover::after{
   border-radius: 0.5rem;
   z-index: var(--z-back);
 }
-.skills__html {
-  width: 50%;
+
+.skills__html{
+  width: 0%;
 }
+
 .skills__css {
-  width: 20%;
+  width: 0%;
 }
+
 .skills__js {
-  width: 20%;
-}
-.skills__ux {
-  width: 25%;
-}
-.skills__c {
-    width: 25%;
-}
-.skills__java {
-    width: 20%;
-}
-
-.skills__py {
-  width: 15%;
-}
-
-.skills__sql {
-  width: 20%;
+  width: 0%;
 }
 
 .skills__design {
-    width: 35%;
+  width: 0%;
+}
+
+.skills__ux {
+  width: 0%;
+}
+
+.skills__c {
+  width: 0%;
+}
+.skills__java {
+  width: 0%;
+}
+
+.skills__py {
+  width: 0%;
+}
+
+.skills__sql {
+  width: 0%;
 }
 
 .skills__img {
   border-radius: 0.5rem;
 }
 
-/* ===== WORK =====*/
+/**------------------------------------------------------------------------
+ * *               Trecho das Classes Work (Seção Trabalhos)
+ *   
+ *------------------------------------------------------------------------**/
 .work__container {
   row-gap: 2rem;
 }
@@ -377,7 +452,11 @@ nav ul li a:hover::after{
   transform: scale(1.1);
 }
 
-/* ===== CONTACT =====*/
+/**------------------------------------------------------------------------
+ * *              Trecho das Classes de Contact (Seção Contato)
+ *   
+ *------------------------------------------------------------------------**/
+
 .contact__input {
   width: 100%;
   font-size: var(--normal-font-size);
@@ -397,7 +476,16 @@ nav ul li a:hover::after{
   margin-left: auto;
 }
 
-/* ===== FOOTER =====*/
+.textoContato
+{
+  text-align: center;
+}
+
+/**------------------------------------------------------------------------
+ * *                  Trecho das Classes FOOTER (Rodapé)
+ *   
+ *------------------------------------------------------------------------**/
+
 .footer {
   background-color: var(--second-color);
   color: #fff;
@@ -421,242 +509,9 @@ nav ul li a:hover::after{
   font-size: var(--smaller-font-size);
 }
 
-/* ===== MEDIA QUERIES=====*/
-@media screen and (max-width: 320px) {
-  .home {
-    row-gap: 2rem;
-  }
-  .home__img {
-    width: 200px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .home {
-    padding: 4rem 0 2rem;
-  }
-  .home__social {
-    padding-top: 0;
-    padding-bottom: 2.5rem;
-    flex-direction: row;
-    align-self: flex-end;
-  }
-  .home__social-icon {
-    margin-bottom: 0;
-    margin-right: var(--mb-4);
-  }
-  .home__img {
-    width: 300px;
-    bottom: 25%;
-  }
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    text-align: initial;
-  }
-  .skills__container {
-    grid-template-columns: 0.7fr;
-    justify-content: center;
-    column-gap: 1rem;
-  }
-  .work__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    padding-top: 2rem;
-  }
-  .contact__form {
-    width: 360px;
-    padding-top: 2rem;
-  }
-  .contact__container {
-    justify-items: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
-  }
-  .section {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-  .section-title {
-    margin-bottom: var(--mb-6);
-  }
-  .section-title::after {
-    width: 80px;
-    top: 3rem;
-  }
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-  }
-  .nav__list {
-    display: flex;
-    padding-top: 0;
-  }
-  .nav__item {
-    margin-left: var(--mb-6);
-    margin-bottom: 0;
-  }
-  .nav__toggle {
-    display: none;
-  }
-  .nav__link {
-    color: var(--second-color);
-  }
-  .home {
-    padding: 8rem 0 2rem;
-  }
-  .home__img {
-    width: 400px;
-    bottom: 10%;
-  }
-  .about__container {
-    padding-top: 2rem;
-  }
-  .about__img img {
-    width: 300px;
-  }
-  .about__img2 img {
-    width: 480px;
-  }
-
-  .about__img3 img {
-    width: 512px;
-  }
-  .skills__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    align-items: center;
-    text-align: initial;
-  }
-  .work__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .bd-grid {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .home {
-    padding: 10rem 0 2rem;
-  }
-  .home__img {
-    width: 450px;
-  }
-
-  .item_overloadTXT{
-    grid-row: 4;
-  }
-
-  .item_overloadIMG{
-    grid-row: 3;
-  }
-}
-
-.textoContato
-{
-  text-align: center;
-}
-
-.about__container {
-  display: flex; /* Ativa o Flexbox */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  gap: 20px; /* Espaçamento entre os itens */
-  max-width: 1080px; /* Largura máxima do container */
-}
-
-.about__container > div,
-.about__container > .about__img,
-.about__container > .about__img2,
-.about__container > .about__img3 {
-  flex: 1 1 calc(50% - 10px); /* Cada item ocupa 50% no desktop */
-}
-
-.about__img img,
-.about__img2 img,
-.about__img3 img {
-  display: block; /* Remove o comportamento inline padrão das imagens */
-  margin: 0 auto; /* Centraliza horizontalmente */
-}
-
-.about__img,
-.about__img2,
-.about__img3 {
-  text-align: center; /* Garante centralização do conteúdo nas divs */
-  width: 100%; /* Garante que as divs ocupem toda a largura no mobile */
-}
-
-@media (max-width: 768px) { /* Ajuste para mobile */
-
-  .skills__img{
-    display: none;
-  }
-
-  .about__container {
-    flex-direction: column; /* Alinha os itens verticalmente */
-  }
-
-  .about__img {
-    order: 0; /* Define a nova ordem para o elemento */
-  }
-
-  .about__subtitle {
-    order: 1; /* Mantém os textos depois da imagem */
-  }
-
-  .about__img2 {
-    order: 2;
-  }
-
-  .about__img3 {
-    order: 4;
-  }
-
-  /* Ajustando os textos */
-  .about__container > div:nth-child(3) {
-    order: 3;
-  }
-
-  .about__container > div:nth-child(6) {
-    order: 5;
-  }
-
-  .home__social-icon {
-    width: max-content;
-    margin-bottom: var(--mb-2);
-    font-size: 0.9rem;
-    color: var(--second-color);
-  }
-
-  .botao_darkmode{
-    font-size: 1.5rem;
-    margin-left: -64px;
-  }
-
-}
-
-@media (max-width: 361px) { /* Ajuste fino para mobile (Samsumg Galaxy S8)*/
-  .home__social-icon {
-    width: max-content;
-    margin-bottom: var(--mb-2);
-    font-size: 0.7rem;
-    color: var(--second-color);
-  }
-
-  .botao_darkmode{
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-left: auto;
-  }
-
-}
-
 /**------------------------------------------------------------------------
- * *                                INFO
- *                         Trecho do "obrigado.html"
+ * *                      Trecho do "obrigado.html"
+ *                         
  *------------------------------------------------------------------------**/
 
 /* Geral */
@@ -715,8 +570,8 @@ nav ul li a:hover::after{
 }
 
 /**------------------------------------------------------------------------
- * *                                INFO
- *                              Modo Escuro
+ * *                Trecho do Modo Escuro (Dark Mode)
+ *                              
  *------------------------------------------------------------------------**/
 
 body.dark-mode {
@@ -752,7 +607,7 @@ body.dark-mode {
     background-color: #000000;
   }
 
-  /* Trecho Mobile*/
+  /* - - - Trecho Mobile - - - */
   
   @media (max-width: 768px) { 
     .botao_darkmode{
@@ -768,8 +623,8 @@ body.dark-mode {
 }
 
 /**------------------------------------------------------------------------
- * *                                INFO
- *                           Trecho de animações
+ * *               Adicionais -> Animações de fundo e extras
+ *
  *------------------------------------------------------------------------**/
 
  .video
@@ -787,7 +642,7 @@ body.dark-mode {
 }
 
 .blinking {
-  font-weight: bold; /* Deixe o underline destacado */
+  font-weight: bold;                            /* Deixe o underline destacado */
   animation: blink 1s steps(1, start) infinite; /* Animação contínua */
 }
 
