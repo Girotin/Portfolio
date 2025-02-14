@@ -11,14 +11,6 @@ ________________________________________________________________________________
 
 Fork do código original do desenvolvedor bedimcode.
 
-Foram feitas consideráveis adaptações com relação ao código original:
-
-- Adicionado um modo escuro;
-- Animação de video WEBM ao fundo;
-- Animações variadas em CSS e manipulação SVG.
-- Tradução dos elementos e código para Português BR.
-- Substituição dos elementos template por reais elementos do meu portifólio.
-
 No momento hosteado [aqui](https://giroto.netlify.app)
 
 ![preview img](/preview.png)
