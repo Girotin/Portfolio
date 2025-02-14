@@ -2,7 +2,7 @@
 
 Copyright (c) 2023 Marlon
 
-Copyright (c) 2024,2025 Giroto
+Copyright (c) 2025 Giroto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,3 +21,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+-----------------------
+
+A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
+deste software e dos arquivos de documentação associados (o "Software"), para lidar
+com o Software sem restrições, incluindo, sem limitação, os direitos de usar, copiar,
+modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software,
+bem como permitir que as pessoas para as quais o Software é fornecido também o façam,
+sujeito às seguintes condições:
+
+O aviso de direitos autorais acima e esta permissão devem ser incluídos em todas
+as cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "TAL COMO ESTÁ", SEM QUALQUER GARANTIA, EXPRESSA OU IMPLÍCITA,
+INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO
+PROPÓSITO E NÃO VIOLAÇÃO. EM NENHUMA CIRCUNSTÂNCIA OS AUTORES OU DETENTORES DOS DIREITOS
+AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANO OU OUTRA RESPONSABILIDADE,
+SEJA EM UMA AÇÃO CONTRATUAL, DELITO OU OUTRA SITUAÇÃO, DECORRENTE DE, FORA DE OU EM CONEXÃO
+COM O SOFTWARE OU O USO OU OUTRAS TRANSAÇÕES NO SOFTWARE.
