@@ -1,5 +1,5 @@
 # Meu portfólio pessoal
-## [Clique aqui para ver o repositório original](https://github.com/bedimcode/portfolio-responsive-complete)
+## [Este repositório é um fork, clique aqui para ver o repositório original](https://github.com/bedimcode/portfolio-responsive-complete)
 
 - Website pessoal responsivo usando HTML, CSS e JavaScript
 - Contém animações ao scrollar a tela.
