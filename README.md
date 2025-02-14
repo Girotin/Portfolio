@@ -1,4 +1,4 @@
-# Meu portifólio pessoal
+# Meu portfólio pessoal
 ## [Clique aqui para ver o repositório original](https://github.com/bedimcode/portfolio-responsive-complete)
 
 - Website pessoal responsivo usando HTML, CSS e JavaScript
